@@ -9,5 +9,12 @@ end
 # end
 
 get '/messages' do
+  @messages = Message.all
+  #Need to load everything here before I can load into the erb file
   erb :'messages/index'
 end  
+
+get '/sayhello/:name' do
+  @name = params[:name]
+  erb :'messages/sayhello'
+end
