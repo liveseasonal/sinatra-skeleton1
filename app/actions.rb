@@ -21,10 +21,12 @@ end
 
 #Play around here. As this stands at the moment when I add a name in the url and the embedded code will run in the html file as it is required in the message. 
 
-get '/messages/:id' do
-  @message = Message.find params[:id]
-    erb :'messages/show'
-end  
+#Wrong order having id before new
+
+# get '/messages/:id' do
+#   @message = Message.find params[:id]
+#     erb :'messages/show'
+# end  
 
 get '/messages/new' do
   erb :'messages/new'
@@ -42,8 +44,8 @@ post '/messages' do
   redirect '/messages'
 end
 
-# get '/messages/:id' do
-#   @message = Message.find params[:id]
-#     erb :'messages/show'
-# end  
+get '/messages/:id' do
+  @message = Message.find params[:id]
+    erb :'messages/show'
+end  
 
