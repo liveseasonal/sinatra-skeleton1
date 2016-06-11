@@ -14,7 +14,13 @@ get '/messages' do
   erb :'messages/index'
 end  
 
+#Play around here. As this stands at the moment when I add a name in the url and the embedded code will run in the html file as it is required in the message. 
+
 get '/sayhello/:name' do
   @name = params[:name]
   erb :'messages/sayhello'
 end
+
+get '/messages/new' do
+  erb :'messages/new'
+end  
